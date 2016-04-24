@@ -4,8 +4,10 @@
   "description": "Generate and insert random values into a redis instance from the command line",
   "main": "generator.js",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
+  "readme": "./README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/SaminOz/redis-random-data-generator.git"
