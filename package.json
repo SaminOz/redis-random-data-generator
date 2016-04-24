@@ -1,0 +1,22 @@
+{
+  "name": "redis-random-data-generator",
+  "version": "0.0.1",
+  "description": "Generate and insert random values into a redis instance from the command line",
+  "main": "generator.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node generator.js string 1"
+  },
+  "keywords": [
+    "redis",
+    "insert",
+    "generate"
+  ],
+  "author": "Sam Moore <samueljsmoore@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lorem-ipsum": "^1.0.3",
+    "node-uuid": "^1.4.7",
+    "redis-stream": "^0.1.0"
+  }
+}
