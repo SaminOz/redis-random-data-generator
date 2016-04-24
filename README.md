@@ -15,9 +15,9 @@ In working for another NPM project I needed to populate a redis instance with a 
    file.                                                            
                                                                     
  * This (config.json) file is automatically generated on running    
-   npm install generator and will default to 127.0.0.1:6379 change  
-   the settings to suit your setup. If the file gets deleted the    
-   local default setting will be used.                              
+   npm install redis-random-data-generator and will default to 
+   127.0.0.1:6379 change  the settings to suit your setup. If the
+   file gets deleted the local default setting will be used.                              
                                                                     
  * There is no provision yet for an array of <types> so if you      
    require various entries you will need to run the command several 
