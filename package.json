@@ -1,11 +1,14 @@
 {
   "name": "redis-random-data-generator",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "description": "Generate and insert random values into a redis instance from the command line",
   "main": "generator.js",
   "scripts": {
-    "test": "node test.js",
-    "start": "node generator.js string 1"
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SaminOz/redis-random-data-generator.git"
   },
   "keywords": [
     "redis",

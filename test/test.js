@@ -7,7 +7,7 @@ var config = {
   "port" : "6379" 
 };
 
-cp.execFile('node', ['generator.js', 'string'], function(err, stdout, stderr){
+cp.execFile('node', ['./generator.js', 'string'], function(err, stdout, stderr){
   if (err) console.error(err);
   assert.equal(
     stdout, 
@@ -17,7 +17,7 @@ cp.execFile('node', ['generator.js', 'string'], function(err, stdout, stderr){
   process.stdout.write('\033[32mPASSED!\033[39m passing only one parameter throws the correct error message and exits\n');
 });
 
-cp.execFile('node', ['generator.js', 'string', '100', 'extra'], function(err, stdout, stderr){
+cp.execFile('node', ['./generator.js', 'string', '100', 'extra'], function(err, stdout, stderr){
   if (err) console.error(err);
   assert.equal(
     stdout, 
@@ -27,7 +27,7 @@ cp.execFile('node', ['generator.js', 'string', '100', 'extra'], function(err, st
   process.stdout.write('\033[32mPASSED!\033[39m passing too many parameters throws the correct error message and exits\n');
 });
 
-cp.execFile('node', ['generator.js', 'string', 'string'], function(err, stdout, stderr){
+cp.execFile('node', ['./generator.js', 'string', 'string'], function(err, stdout, stderr){
   if (err) console.error(err);
   assert.equal(
     stdout, 
@@ -37,7 +37,7 @@ cp.execFile('node', ['generator.js', 'string', 'string'], function(err, stdout, 
   process.stdout.write('\033[32mPASSED!\033[39m passing wrong parameter types throws the correct error message and exits\n');
 });
 
-cp.execFile('node', ['generator.js', 'string', '10000000'], function(err, stdout, stderr){
+cp.execFile('node', ['./generator.js', 'string', '10000000'], function(err, stdout, stderr){
   if (err) console.error(err);
   assert.equal(
     stdout, 
@@ -47,7 +47,7 @@ cp.execFile('node', ['generator.js', 'string', '10000000'], function(err, stdout
   process.stdout.write('\033[32mPASSED!\033[39m passing > 1000000 records requested throws the correct error message and exits\n');
 });
 
-cp.execFile('node', ['generator.js', 'unknownType', '100'], function(err, stdout, stderr){
+cp.execFile('node', ['./generator.js', 'unknownType', '100'], function(err, stdout, stderr){
   if (err) console.error(err);
   assert.equal(
     stdout, 
@@ -84,7 +84,7 @@ cp.exec('redis-cli -h ' + config.server + ' -p ' + config.port + ' ping' , (err,
   process.stdout.write('\033[32mPASSED!\033[39m redis connection available on ' + config.server + ':' + config.port + '\n');
 });
 
-cp.execFile('node', ['generator.js', '-h'], function(err, stdout, stderr){
+cp.execFile('node', ['./generator.js', '-h'], function(err, stdout, stderr){
   if (err) console.error(err);
   var helpText = fs.readFileSync('help.txt');
   assert.equal(

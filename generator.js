@@ -58,7 +58,7 @@ Generator.prototype._help = function( params ) {
 
 Generator.prototype._setConnection = function(){
   try{
-    config = JSON.parse(fs.readFileSync('./config.json'));
+    config = JSON.parse(fs.readFileSync('../config.json'));
   }
   catch(e) {}
     
