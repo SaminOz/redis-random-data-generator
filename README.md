@@ -10,7 +10,7 @@ In working for another NPM project I needed to populate a redis instance with a 
 
  > `node generator.js <type> <qty>`
                                                                     
- * This will enter <qty> of <type> entries into the redis instance  
+ * This will enter `<qty>` of `<type>` entries into the redis instance  
    running at the server and port address set in the config.json    
    file.                                                            
                                                                     
@@ -19,7 +19,7 @@ In working for another NPM project I needed to populate a redis instance with a 
    127.0.0.1:6379 change  the settings to suit your setup. If the
    file gets deleted the local default setting will be used.                              
                                                                     
- * There is no provision yet for an array of <types> so if you      
+ * There is no provision yet for an array of `<types>` so if you      
    require various entries you will need to run the command several 
    times.                                                           
                                                                     
