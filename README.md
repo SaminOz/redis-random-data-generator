@@ -8,7 +8,7 @@ In working for another NPM project I needed to populate a redis instance with a 
 
  Basic Usage:                                                       
 
- > node generator.js <type> <qty>                                   
+ > `node generator.js <type> <qty>`
                                                                     
  * This will enter <qty> of <type> entries into the redis instance  
    running at the server and port address set in the config.json    
