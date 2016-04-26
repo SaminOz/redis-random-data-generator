@@ -47,6 +47,7 @@ Generator.prototype = Object.create(stream.Readable.prototype, {
 
 function Generator( options ){
   stream.Readable.call(this, options);
+  this.errorState = false;
   if( ! this._checkParams(params) ) process.exit();
   this._setConnection();
 }
@@ -54,11 +55,13 @@ function Generator( options ){
 Generator.prototype._help = function( params ) {
   var helpOutput = fs.readFileSync('./help.txt');
   process.stdout.write( helpOutput );
+  process.exit();
 };
 
 Generator.prototype._setConnection = function(){
+  var self = this;
   try{
-    config = JSON.parse(fs.readFileSync('../config.json'));
+    config = JSON.parse(fs.readFileSync('./config.json'));
   }
   catch(e) {}
     
@@ -72,8 +75,19 @@ Generator.prototype._setConnection = function(){
     config.port = "6379";
   }
 
+
   redis = new Redis(config.port, config.server);
   rStream = redis.stream();
+  rStream.on('error', function(err){
+    process.stdout.write('\033[31mNo redis connection available on : ' + config.server + ':' + config.port + '\033[39m \n');
+    process.exit();
+  });
+
+  rStream.on('end', function(err){
+    end = Date.now();
+    elapsed = (end - start);
+    process.stdout.write('\033[32m' + self.qty + ' records of type ' + self.createType + ' were generated and inserted [' + self.type + '] into ' + config.server+ ':' + config.port + ' in ' + elapsed + 'ms.\033[39m \n');
+  });
 }
 
 Generator.prototype._checkParams = function( p ) {
@@ -182,12 +196,11 @@ Generator.prototype._read = function(){
   }
 }
 
+
 var generator = new Generator();
 generator.pipe(rStream.redis);
 generator.on('end', function(err){
-  end = Date.now();
-  elapsed = (end - start);
-  process.stdout.write('\033[32m' + this.qty + ' records of type ' + this.createType + ' were generated and inserted [' + this.type + '] into ' + config.server+ ':' + config.port + ' in ' + elapsed + 'ms.\033[39m \n');
   rStream.end();
 });
+
 

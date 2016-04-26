@@ -7,7 +7,6 @@
     "test": "node test/test.js",
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
-  "readme": "./README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/SaminOz/redis-random-data-generator.git"
