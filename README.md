@@ -15,13 +15,15 @@ In working for another NPM project I needed to populate a redis instance with a 
    file.                                                            
 
  * If <key_prefix> is set then this will be prepended to the key (uuid)
-   separated by a ":" - thanks to Alfonso Montero for this contribution
+   separated by a ":" - thanks to Alfonso Montero for this contribution 
  
    `node generator.js hash 100 session`
+
    `1)...`
+   
    `100) "session:ffab3b35-09c3-4fd7-9af1-4d323534065e"`
                                                                     
- * This (config.json) file is automatically generated on running    
+ * This (config.json) file is automatically generated on running
    npm install redis-random-data-generator and will default to 
    127.0.0.1:6379 change  the settings to suit your setup. If the
    file gets deleted the local default setting will be used.                              
