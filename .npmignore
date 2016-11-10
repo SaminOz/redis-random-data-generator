@@ -1,0 +1,6 @@
+.gitignore
+.git
+nextSteps.txt
+dump.rdb
+node_modules
+npm-debug.log
