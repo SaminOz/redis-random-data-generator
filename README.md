@@ -8,11 +8,18 @@ In working for another NPM project I needed to populate a redis instance with a 
 
  Basic Usage:                                                       
 
- > `node generator.js <type> <qty>`
+ > `node generator.js <type> <qty> [<key_prefix>]`
                                                                     
  * This will enter `<qty>` of `<type>` entries into the redis instance  
    running at the server and port address set in the config.json    
    file.                                                            
+
+ * If <key_prefix> is set then this will be prepended to the key (uuid)
+   separated by a ":" - thanks to Alfonso Montero for this contribution
+ 
+   `node generator.js hash 100 session`
+   `1)...`
+   `100) "session:ffab3b35-09c3-4fd7-9af1-4d323534065e"`
                                                                     
  * This (config.json) file is automatically generated on running    
    npm install redis-random-data-generator and will default to 

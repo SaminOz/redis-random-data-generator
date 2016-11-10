@@ -97,11 +97,11 @@ Generator.prototype._checkParams = function( p ) {
     process.exit();
   }
 
-  if( p.length < 2 || p.length > 2 ) {
-    process.stdout.write('please pass <type> <qty> as command line parameters\ne.g. node generator.js string 100\n');
+  if( p.length < 2 || p.length > 3 ) {
+    process.stdout.write('please pass <type> <qty> <key_prefix> as command line parameters\ne.g. node generator.js string 100\n');
     return false;
   }
-  else if( p.length === 2) {
+  else if( p.length === 2 || p.length === 3 ) {
     //check to see what we have (in whatever order - check for isNaN)
     if((typeof +p[0] === 'number' && +p[0] === +p[0] ) && typeof p[1] === 'string' ) {
       this.qty = +p[0];
@@ -112,7 +112,7 @@ Generator.prototype._checkParams = function( p ) {
       this.createType = p[0];
     }
     else {
-      process.stdout.write('please pass <type> <qty> as command line parameters\ne.g. node generator.js string 100\n');
+      process.stdout.write('please pass <type> <qty> <key_prefix> as command line parameters\ne.g. node generator.js string 100\n');
       return false;
     }
 
@@ -128,13 +128,19 @@ Generator.prototype._checkParams = function( p ) {
 
     this.type = type[this.createType];
     this.limit = this.qty;
+    if ( typeof p[2] === "undefined" ) {
+      this.prefix = '';
+    }
+    else {
+      this.prefix = p[2] + ':';
+    }
     return true;
   }
   return false;
 }
 
 Generator.prototype._getKey = function(){
-  return uuid.v4(); 
+  return this.prefix + uuid.v4();
 };
 
 Generator.prototype._getValue = function(){
@@ -202,5 +208,3 @@ generator.pipe(rStream.redis);
 generator.on('end', function(err){
   rStream.end();
 });
-
-

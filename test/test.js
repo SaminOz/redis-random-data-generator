@@ -11,27 +11,17 @@ cp.execFile('node', ['./generator.js', 'string'], function(err, stdout, stderr){
   if (err) console.error(err);
   assert.equal(
     stdout, 
-    'please pass <type> <qty> as command line parameters\ne.g. node generator.js string 100\n',
+    'please pass <type> <qty> <key_prefix> as command line parameters\ne.g. node generator.js string 100\n',
     '\033[31mFAILED!\033[39m one param: generator.js did NOT pass the correct error message to stdout'
   );
   process.stdout.write('\033[32mPASSED!\033[39m passing only one parameter throws the correct error message and exits\n');
-});
-
-cp.execFile('node', ['./generator.js', 'string', '100', 'extra'], function(err, stdout, stderr){
-  if (err) console.error(err);
-  assert.equal(
-    stdout, 
-    'please pass <type> <qty> as command line parameters\ne.g. node generator.js string 100\n',
-    '\033[31mFAILED!\033[39m three params: generator.js did NOT pass the correct error message to stdout'
-  );
-  process.stdout.write('\033[32mPASSED!\033[39m passing too many parameters throws the correct error message and exits\n');
 });
 
 cp.execFile('node', ['./generator.js', 'string', 'string'], function(err, stdout, stderr){
   if (err) console.error(err);
   assert.equal(
     stdout, 
-    'please pass <type> <qty> as command line parameters\ne.g. node generator.js string 100\n',
+    'please pass <type> <qty> <key_prefix> as command line parameters\ne.g. node generator.js string 100\n',
     '\033[31mFAILED!\033[39m wrong types: generator.js did NOT pass the correct error message to stdout'
   );
   process.stdout.write('\033[32mPASSED!\033[39m passing wrong parameter types throws the correct error message and exits\n');
