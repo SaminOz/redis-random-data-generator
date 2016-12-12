@@ -3,7 +3,7 @@ var
   fs = require('fs'),
   stream = require('stream'),
   Redis = require('redis-stream'),
-  uuid = require('node-uuid'),
+  uuid = require('uuid'),
   lorem = require('lorem-ipsum'),
   type = {
     'string': 'SET',
