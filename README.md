@@ -39,18 +39,18 @@ In working for another NPM project I needed to populate a redis instance with a 
                                                                     
  * Dependancy Graph for generator.js                                
                                                                      
-    ├─┬ lorem-ipsum@1.0.3
-    │ └─┬ optimist@0.3.7
-    │   └── wordwrap@0.0.3
-    ├─┬ redis-stream@0.1.0
-    │ └─┬ event-stream@2.1.9
-    │   ├── from@0.1.3
-    │   ├── optimist@0.2.8
-    │   └── through@0.0.4
-    └── uuid@3.0.1
-                                          
-                                                                    
-
+    ├─┬ lorem-ipsum@1.0.3                                                       
+    │ └─┬ optimist@0.3.7                                                        
+    │   └── wordwrap@0.0.3                                                      
+    ├─┬ redis-stream@0.1.0                                                      
+    │ └─┬ event-stream@2.1.9                                                    
+    │   ├── from@0.1.3                                                          
+    │   ├── optimist@0.2.8                                                      
+    │   └── through@0.0.4                                                       
+    └── uuid@3.0.1                                                              
+                                                                                
+                                                                                
+                                                                                
  Types (others may be added in future versions i.e. geohash):       
 
  * 'string'  uses SET to add a redis string value                   
