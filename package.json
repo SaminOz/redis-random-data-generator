@@ -1,6 +1,6 @@
 {
   "name": "redis-random-data-generator",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "description": "Generate and insert random values into a redis instance from the command line",
   "main": "generator.js",
   "scripts": {
