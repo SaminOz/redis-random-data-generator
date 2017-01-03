@@ -1,6 +1,6 @@
 {
   "name": "redis-random-data-generator",
-  "version": "0.1.7",
+  "version": "0.1.11",
   "description": "Generate and insert random values into a redis instance from the command line",
   "main": "generator.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "lorem-ipsum": "^1.0.3",
-    "node-uuid": "^1.4.7",
-    "redis-stream": "^0.1.0"
+    "redis-stream": "^0.1.0",
+    "uuid": "^3.0.0"
   }
 }
