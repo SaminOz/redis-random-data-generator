@@ -98,7 +98,7 @@ Generator.prototype._checkParams = function( p ) {
   }
 
   if( p.length < 2 || p.length > 3 ) {
-    process.stdout.write('please pass <type> <qty> <key_prefix> as command line parameters\ne.g. node generator.js string 100\n');
+    process.stdout.write('Please pass <type> <qty> <key_prefix> as command line parameters or --help to display usage manual.\ne.g. node generator.js string 100\n');
     return false;
   }
   else if( p.length === 2 || p.length === 3 ) {
@@ -112,7 +112,7 @@ Generator.prototype._checkParams = function( p ) {
       this.createType = p[0];
     }
     else {
-      process.stdout.write('please pass <type> <qty> <key_prefix> as command line parameters\ne.g. node generator.js string 100\n');
+      process.stdout.write('Please pass <type> <qty> <key_prefix> as command line parameters or --help to display usage manual.\ne.g. node generator.js string 100\n');
       return false;
     }
 
