@@ -5,7 +5,7 @@
 | Basic Usage:                                                       |
 |=================================================================== |
 |  > `node generator.js <type> <qty> [<key_prefix>]`                 |
-|                                                                    |                    
+|                                                                    |
 | * This will enter `<qty>` of `<type>` entries into the redis       |
 |   instance running at the server and port address set in the       |
 |   config.json file.                                                |
@@ -20,7 +20,7 @@
 |                                                                    |
 | * This (config.json) file is automatically generated on running    |
 |   npm install redis-random-data-generator and will default to      |
-|   127.0.0.1:6379 change the settings to suit your setup. If the    |   
+|   127.0.0.1:6379 change the settings to suit your setup. If the    |
 |   file gets deleted the local default setting will be used.        |
 |                                                                    |
 | * There is no provision yet for an array of <types> so if you      |
@@ -33,7 +33,7 @@
 |   for values.                                                      |
 |                                                                    |
 | * Dependancy Graph for generator.js                                |
-|                                                                    | 
+|                                                                    |
 |		├─┬ lorem-ipsum@1.0.3                                            |
 |		│ └─┬ optimist@0.3.7                                             |
 |		│   └── wordwrap@0.0.3                                           |
@@ -55,6 +55,4 @@
 |   to a sorted set.                                                 |
 | * 'hash'    uses HMSET to add a random number of values to a hash  |
 /*------------------------------------------------------------------*/
-
-
 

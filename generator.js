@@ -32,7 +32,7 @@ var
   }
 ;
 
-var 
+var
   params = process.argv.splice(2),
   redis = null,
   rStream = null,
@@ -64,7 +64,7 @@ Generator.prototype._setConnection = function(){
     config = JSON.parse(fs.readFileSync('./config.json'));
   }
   catch(e) {}
-    
+
   if( ! config.server ) {
     process.stdout.write('using default redis server');
     config.server = "127.0.0.1";
